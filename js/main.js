@@ -1,5 +1,7 @@
 // ===== Header Scroll Effect =====
 const header = document.getElementById('header');
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
 
 function updateHeader() {
     if (window.scrollY > 50) {
@@ -13,27 +15,34 @@ window.addEventListener('scroll', updateHeader);
 updateHeader();
 
 // ===== Mobile Menu =====
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
+function setNavOpen(isOpen) {
+    hamburger.classList.toggle('active', isOpen);
+    nav.classList.toggle('active', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+}
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    nav.classList.toggle('active');
+    setNavOpen(!nav.classList.contains('active'));
 });
 
 // Close menu on link click
 nav.querySelectorAll('.header__link').forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        nav.classList.remove('active');
+        setNavOpen(false);
     });
 });
 
 // Close menu on outside click
 document.addEventListener('click', (e) => {
     if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-        hamburger.classList.remove('active');
-        nav.classList.remove('active');
+        setNavOpen(false);
+    }
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        setNavOpen(false);
     }
 });
 
