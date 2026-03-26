@@ -15,9 +15,10 @@
     --color-accent-light: #C9A96E;
     --color-green: #4A6741;
     --color-green-light: #6B8F5E;
-    --color-bg: #FAF8F5;
-    --color-bg-dark: #F0EDE8;
+    --color-bg: #F4F2F0;
+    --color-bg-dark: #E9E4DE;
     --color-bg-section: #2C2419;
+    --color-header-bg: rgba(244, 242, 240, 0.94);
     --color-text: #3A3A3A;
     --color-text-light: #6B6B6B;
     --color-white: #FFFFFF;
@@ -166,32 +167,27 @@ ul {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: transparent;
+    background-color: var(--color-header-bg);
+    box-shadow: 0 1px 0 rgba(62, 39, 35, 0.08);
+    backdrop-filter: blur(10px);
     transition: background-color var(--transition), box-shadow var(--transition);
 }
 
 .header--scrolled {
-    background-color: rgba(255, 255, 255, 0.97);
+    background-color: rgba(244, 242, 240, 0.98);
     box-shadow: var(--shadow-sm);
-    backdrop-filter: blur(10px);
 }
 
 .header__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 88px;
 }
 
 .header__logo-img {
-    height: 55px;
+    height: 62px;
     width: auto;
-    transition: opacity var(--transition);
-    opacity: 0;
-}
-
-.header--scrolled .header__logo-img {
-    opacity: 1;
 }
 
 .header__menu {
@@ -202,7 +198,7 @@ ul {
 .header__link {
     font-size: 0.9rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-primary-dark);
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -210,7 +206,7 @@ ul {
 }
 
 .header--scrolled .header__link {
-    color: var(--color-text);
+    color: var(--color-primary-dark);
 }
 
 .header__link::after {
@@ -243,7 +239,7 @@ ul {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--color-white);
+    background-color: var(--color-primary-dark);
     transition: all var(--transition);
 }
 
@@ -697,7 +693,7 @@ ul {
         right: -100%;
         width: 280px;
         height: 100vh;
-        background-color: var(--color-white);
+        background-color: var(--color-bg);
         box-shadow: var(--shadow-lg);
         transition: right var(--transition);
         display: flex;
