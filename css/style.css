@@ -18,7 +18,7 @@
     --color-bg: #F4F2F0;
     --color-bg-dark: #E9E4DE;
     --color-bg-section: #2C2419;
-    --color-header-bg: rgba(244, 242, 240, 0.94);
+    --color-header-bg: #F4F2F0;
     --color-text: #3A3A3A;
     --color-text-light: #6B6B6B;
     --color-white: #FFFFFF;
@@ -174,7 +174,7 @@ ul {
 }
 
 .header--scrolled {
-    background-color: rgba(244, 242, 240, 0.98);
+    background-color: var(--color-header-bg);
     box-shadow: var(--shadow-sm);
 }
 
