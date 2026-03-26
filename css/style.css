@@ -438,9 +438,7 @@ ul {
 .espaco__feature,
 .espaco__item,
 .prato-card,
-.contato__card,
-.sobre__note,
-.sobre__list-item {
+.contato__card {
     border: 1px solid var(--color-line);
     background: var(--color-panel);
     box-shadow: var(--shadow-soft);
@@ -449,14 +447,13 @@ ul {
 /* ===== Sobre ===== */
 .sobre__grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    gap: 40px;
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.94fr);
+    gap: 52px;
+    align-items: center;
 }
 
 .sobre__visual {
-    display: grid;
-    gap: 22px;
+    display: block;
 }
 
 .sobre__image {
@@ -468,11 +465,6 @@ ul {
     width: 100%;
     height: 640px;
     object-fit: cover;
-}
-
-.sobre__note {
-    padding: 24px 26px;
-    border-radius: 24px;
 }
 
 .sobre__note-label,
@@ -488,47 +480,16 @@ ul {
     color: var(--color-ink-faint);
 }
 
-.sobre__note p {
-    font-size: 1rem;
-    color: var(--color-ink-soft);
-}
-
 .sobre__content {
-    padding-top: 12px;
+    max-width: 560px;
+    padding-top: 0;
 }
 
 .sobre__content p {
-    margin-bottom: 20px;
-    font-size: 1.02rem;
+    margin-bottom: 22px;
+    font-size: 1.08rem;
     color: var(--color-ink-soft);
-    line-height: 1.9;
-}
-
-.sobre__list {
-    display: grid;
-    gap: 16px;
-    margin-top: 32px;
-}
-
-.sobre__list-item {
-    padding: 24px 26px;
-    border-radius: 24px;
-}
-
-.sobre__list-item span {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-accent-strong);
-}
-
-.sobre__list-item p {
-    margin: 0;
-    font-size: 0.98rem;
-    color: var(--color-ink-soft);
+    line-height: 1.95;
 }
 
 /* ===== Cardápio ===== */
